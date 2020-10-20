@@ -1,0 +1,90 @@
+/* .game {
+    display: flex;
+    flex-direction: row;
+  } */
+
+:root{
+  --cl1: #FB6542;
+  --cl2: #375E97;
+  --cl3: #3F681C;
+  --cl4: #FFBB00;
+}
+
+body{
+  border-top: 2px solid var(--cl4);
+  border-right: 2px solid var(--cl4);
+}
+
+.game-title{
+  text-align: center;
+}
+
+.game-status{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #999;
+}
+
+.game-board{
+  display: flex;
+}
+
+@media (max-width: 760px) {
+  .game-board{
+    /* display: block; */
+    flex-direction: column;
+  }
+}
+
+.game-moves{
+  flex: 1;
+}
+.game-moves ul{
+  margin-top: 0;
+}
+@media (max-width: 760px) {
+  .game-moves{
+    display: flex;
+    justify-content: center;
+  }
+  .game-moves ul{
+    margin-top: 20px;
+  }
+}
+.game-moves ul li{
+   list-style: none;
+}
+.game-moves ul li button{
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 200px;
+  color: white;
+  /* transition: 2s animation; */
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-bottom: 20%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+
+.game-moves ul li:nth-child(even) button{
+  background-color: var(--cl1);
+}
+.game-moves ul li:nth-child(odd) button{
+  background-color: var(--cl2);
+}
+
